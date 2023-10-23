@@ -10,12 +10,11 @@ def validate_input(nums):
 def find_duplicate(nums: list):
     if not validate_input(nums):
         return False
-    nums = sorted(nums, key=lambda x: nums.count(x) > 1, reverse=True)
-    nums_b = []
+    nums_b = set()
     for num in nums:
         if num in nums_b:
             return num
-        nums_b.append(num)
+        nums_b.add(num)
     return False
 
 
